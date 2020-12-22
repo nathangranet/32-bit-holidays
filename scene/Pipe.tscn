@@ -4,25 +4,26 @@
 [ext_resource path="res://scene/Pipe.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.9891, 122.118 )
+extents = Vector2( 29.1503, 404.246 )
 
 [node name="Pipe" type="Area2D"]
+collision_layer = 2
 script = ExtResource( 2 )
 
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0, 92.3835 )
-scale = Vector2( 1, 3.88698 )
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 0, 550 )
+scale = Vector2( 1, 12.9974 )
 texture = ExtResource( 1 )
 
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 0, 491.98 )
-scale = Vector2( 1, 3.88698 )
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 0, -550 )
+scale = Vector2( 1, 12.9974 )
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 92.863 )
+position = Vector2( 0, -550 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( 1.5874, 492.094 )
+position = Vector2( 0, 550 )
 shape = SubResource( 1 )

@@ -14,6 +14,11 @@ config/name="New Game Project"
 run/main_scene="res://Node2D.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=1000
+window/size/height=750
+
 [input]
 
 fly={
@@ -26,10 +31,6 @@ fly={
 
 2d_physics/layer_1="bird"
 2d_physics/layer_2="pipe"
-[display]
-
-window/size/width=1000
-window/size/height=750
 
 [rendering]
 
