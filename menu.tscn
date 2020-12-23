@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Holistya Snow.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://menu.gd" type="Script" id=2]
+[ext_resource path="res://sprite/26909682-8580-4414-BB54-7949DA47A53D_cx0_cy11_cw0_w1200_r1.jpg" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -15,27 +16,31 @@ font_data = ExtResource( 1 )
 position = Vector2( 0, 1 )
 script = ExtResource( 2 )
 
-[node name="play" type="Button" parent="."]
-margin_left = 448.183
-margin_top = 509.06
-margin_right = 527.183
-margin_bottom = 562.06
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 442.901, 321.864 )
+scale = Vector2( 4.26723, 3.80654 )
+texture = ExtResource( 3 )
+
+[node name="quit" type="Button" parent="."]
+margin_left = 451.183
+margin_top = 437.06
+margin_right = 530.183
+margin_bottom = 490.06
 custom_fonts/font = SubResource( 1 )
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="quit" type="Button" parent="."]
+[node name="play" type="Button" parent="."]
 margin_left = 403.536
-margin_top = 282.33
+margin_top = 153.33
 margin_right = 581.536
-margin_bottom = 348.33
+margin_bottom = 219.33
 custom_fonts/font = SubResource( 2 )
 text = "Start_delivery"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[connection signal="pressed" from="play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="play" to="." method="_on_quit_pressed"]
