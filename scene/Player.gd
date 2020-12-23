@@ -2,6 +2,7 @@ extends Area2D
 
 signal start_flight
 signal death
+signal game_ended
 
 var FLIGHT_CEILING = 28
 var GRAVITY = 8
@@ -126,6 +127,7 @@ func _on_Bird_area_entered(area):
 	if area.get_name() == "Ground":
 		# Play the crash sound again when we hit the ground
 		set_player_state(State.CRASHED)
+		emit_signal("game_ended")
 	# Until then we're still crashing
 	elif area.get_name() == "TopPipe" or area.get_name() == "BottomPipe":
 		set_player_state(State.CRASHING)

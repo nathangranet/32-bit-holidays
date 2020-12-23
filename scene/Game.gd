@@ -16,3 +16,8 @@ func _on_SpawnWallTimer_timeout():
 	var pipe = PIPE_CLASS.instance()
 	pipe.position = Vector2(1200, y)
 	self.add_child(pipe)
+
+
+func _on_Player_game_ended():
+	$Node2D/Replay.show()
+	get_tree().set_pause(true)
