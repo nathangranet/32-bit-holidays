@@ -27,22 +27,20 @@ var vertical_velocity = 0
 var should_rotate = false
 
 func _ready():
-	# Get the screen size
 	screen_size = get_viewport_rect().size
-	# Ensure the player does not have control on creation
 	set_player_state(State.AUTO_PILOT)
 
 func _physics_process(delta):
-	# Start the phase of player control if flight is triggered during the passive phase
 	if current_state == State.AUTO_PILOT and Input.is_action_just_pressed("fly"):
 		emit_signal("start_flight")
 		set_player_state(State.PLAYING)
-	# Apply the actual physics depending on the state
 	match current_state:
 		State.PLAYING:
 			# Apply the impact of gravity
 			vertical_velocity = clamp(vertical_velocity + GRAVITY, FLY_UPWARD_VELOCITY, MAX_DOWNWARD_VELOCITY)
 			# Check if the player is inputting a flight command
+			if Input.is_action_just_pressed("gift") and $"../gift".position.y > 900:
+				$"../gift".position = self.position
 			if Input.is_action_just_pressed("fly"):
 				# Play the flap animation and apply flight changes
 #				$AnimationPlayer.play("flying", -1, ANIMATION_FLAP_SPEED)
