@@ -1,19 +1,48 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://sprite/Body.png" type="Texture" id=1]
 [ext_resource path="res://scene/Player.gd" type="Script" id=2]
+[ext_resource path="res://sprite/Wing.png" type="Texture" id=3]
+[ext_resource path="res://sprite/Head.png" type="Texture" id=4]
+[ext_resource path="res://sprite/Untitled.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 31.625, 31 )
+extents = Vector2( 33.6391, 13.1215 )
 
 [node name="Player" type="Area2D"]
-collision_mask = 3
+collision_mask = 7
 script = ExtResource( 2 )
 
+[node name="Sprite6" type="Sprite" parent="."]
+modulate = Color( 0.717647, 0.698039, 0.698039, 1 )
+position = Vector2( 1.96391, -17.21 )
+texture = ExtResource( 3 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( -20.2622, 3.57569 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
 [node name="Sprite" type="Sprite" parent="."]
+rotation = 1.5708
 texture = ExtResource( 1 )
 
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 25.692, -1.85406 )
+rotation = 1.5708
+texture = ExtResource( 4 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( -20.3947, -1.19189 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="Sprite5" type="Sprite" parent="."]
+position = Vector2( -2.37432, -17.0431 )
+texture = ExtResource( 3 )
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.177483, -5.11692 )
 shape = SubResource( 1 )
 
 [node name="RotationBeginTimout" type="Timer" parent="."]

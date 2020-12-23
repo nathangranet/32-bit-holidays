@@ -71,45 +71,44 @@ func _physics_process(delta):
 			pass
 
 func set_player_state(state):
-	pass
-#	match state:
-#		State.PLAYING:
-#			# Give the player control of the character
-#			current_state = State.PLAYING
-#			# Set other control properties
-#			should_rotate = true
-#			# Reset the flying animation and stop it as it will only trigger on fly command
+	match state:
+		State.PLAYING:
+			# Give the player control of the character
+			current_state = State.PLAYING
+			# Set other control properties
+			should_rotate = true
+			# Reset the flying animation and stop it as it will only trigger on fly command
 #			$AnimatedSprite.stop()
 #			$AnimatedSprite.set_animation("fly")
 #			$AnimationPlayer.stop(false)
 #			$AnimationPlayer.get_animation("flying").loop = false
 #			$AnimationPlayer.seek(1.6, true)
-#		State.AUTO_PILOT:
-#			# Take away the player control
-#			current_state = State.AUTO_PILOT
-#			# Reset other control properties
-#			vertical_velocity = 0
-#			should_rotate = false
-#			# Reset the position and rotation of the player
-#			position.y = screen_size.y / 2
-#			position.x = screen_size.x / 3
-#			rotation_degrees = 0
-#			# Passively play the flying animation on loop
+		State.AUTO_PILOT:
+			# Take away the player control
+			current_state = State.AUTO_PILOT
+			# Reset other control properties
+			vertical_velocity = 0
+			should_rotate = false
+			# Reset the position and rotation of the player
+			position.y = screen_size.y / 2
+			position.x = screen_size.x / 3
+			rotation_degrees = 0
+			# Passively play the flying animation on loop
 #			$AnimatedSprite.stop()
 #			$AnimatedSprite.set_animation("fly")
 #			$AnimationPlayer.get_animation("flying").loop = true
 #			$AnimationPlayer.seek(0, true)
 #			$AnimationPlayer.play("flying", -1, ANIMATION_FLY_SPEED)
-#		State.CRASHING:
-#			# Take away the player control
-#			current_state = State.CRASHING
-#			# Passively play the hurt animation on loop
+		State.CRASHING:
+			# Take away the player control
+			current_state = State.CRASHING
+			# Passively play the hurt animation on loop
 #			$AnimationPlayer.stop()
 #			$AnimatedSprite.play("hit")
-#		State.CRASHED:
-#			# Take away the player control
-#			current_state = State.CRASHED
-#			# Passively play the hurt animation on loop
+		State.CRASHED:
+			# Take away the player control
+			current_state = State.CRASHED
+			# Passively play the hurt animation on loop
 #			$AnimationPlayer.stop()
 #			$AnimatedSprite.play("hit")
 
@@ -121,6 +120,7 @@ func _on_Bird_area_entered(area):
 	# Only check for death if we're playing
 	if current_state == State.PLAYING:
 		print("death")
+		set_player_state(State.CRASHING)
 		emit_signal("death")
 	# Once we reach the ground we've crashed
 	if area.get_name() == "Ground":
