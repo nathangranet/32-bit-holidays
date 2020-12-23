@@ -27,4 +27,5 @@ position = Vector2( 3, 0 )
 position = Vector2( 500, -10 )
 amount = 100
 lifetime = 4.0
+preprocess = 10.0
 process_material = SubResource( 3 )

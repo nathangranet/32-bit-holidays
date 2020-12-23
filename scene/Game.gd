@@ -18,7 +18,7 @@ func _on_SpawnWallTimer_timeout():
 	self.add_child(house)
 	var pipe = PIPE_CLASS.instance()
 	pipe.position = Vector2(1200, y)
-	self.add_child(pipe)
+	$PipeContainer.add_child(pipe)
 	self.score += 1
 
 
@@ -35,3 +35,7 @@ func set_score(value):
 			$Node2D/Label.text = String(value)
 		else:
 			$Node2D/Label.text = "0"
+
+
+func _on_Player_start_flight():
+	$SpawnWallTimer.start()

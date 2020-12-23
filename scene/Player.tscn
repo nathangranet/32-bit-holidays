@@ -48,5 +48,6 @@ shape = SubResource( 1 )
 
 [node name="RotationBeginTimout" type="Timer" parent="."]
 wait_time = 0.5
+
 [connection signal="area_entered" from="." to="." method="_on_Bird_area_entered"]
 [connection signal="timeout" from="RotationBeginTimout" to="." method="_on_RotationBeginTimout_timeout"]
