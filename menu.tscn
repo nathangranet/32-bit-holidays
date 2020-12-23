@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Holistya Snow.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://menu.gd" type="Script" id=2]
 [ext_resource path="res://sprite/26909682-8580-4414-BB54-7949DA47A53D_cx0_cy11_cw0_w1200_r1.jpg" type="Texture" id=3]
+[ext_resource path="res://scene/Snow.tscn" type="PackedScene" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -20,6 +21,8 @@ script = ExtResource( 2 )
 position = Vector2( 442.901, 321.864 )
 scale = Vector2( 4.26723, 3.80654 )
 texture = ExtResource( 3 )
+
+[node name="Snow2" parent="." instance=ExtResource( 4 )]
 
 [node name="quit" type="Button" parent="."]
 margin_left = 451.183
@@ -42,5 +45,8 @@ text = "Start_delivery"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Snow" parent="." instance=ExtResource( 4 )]
+
 [connection signal="pressed" from="quit" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="play" to="." method="_on_quit_pressed"]
