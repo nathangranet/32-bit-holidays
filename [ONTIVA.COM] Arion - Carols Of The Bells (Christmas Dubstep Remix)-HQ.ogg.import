@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[ONTIVA.COM] Arion - Carols Of The Bells (Christmas Dubstep Remix)-HQ.ogg-7ef075b235acd6577795adcb57f42946.oggstr"
+
+[deps]
+
+source_file="res://[ONTIVA.COM] Arion - Carols Of The Bells (Christmas Dubstep Remix)-HQ.ogg"
+dest_files=[ "res://.import/[ONTIVA.COM] Arion - Carols Of The Bells (Christmas Dubstep Remix)-HQ.ogg-7ef075b235acd6577795adcb57f42946.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
