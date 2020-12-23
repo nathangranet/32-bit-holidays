@@ -21,14 +21,15 @@ func _on_SpawnWallTimer_timeout():
 
 
 func _on_Player_game_ended():
+	$Node2D/Replay/Label.text = String(score) if score > 0 else "0"
 	$Node2D/Replay.show()
 	get_tree().set_pause(true)
 
 
 func set_score(value):
 	score = value
-	if $Label:
+	if $Node2D/Label:
 		if value >= 0:
-			$Label.text = String(value)
+			$Node2D/Label.text = String(value)
 		else:
-			$Label.text = "0"
+			$Node2D/Label.text = "0"
