@@ -1,19 +1,21 @@
 extends Node2D
 
 const PIPE_CLASS = preload("res://scene/Pipe.tscn")
+const HOUSE_CLASS = preload("res://scene/House.tscn")
 var score = -3 setget set_score
-
 
 func _ready():
 	randomize()
 
-
 func _process(delta):
 	pass
 
-
 func _on_SpawnWallTimer_timeout():
 	var y = rand_range(-200, 200) + 375
+	var x = rand_range(-50, 50) + 1030
+	var house = HOUSE_CLASS.instance()
+	house.position = Vector2(x, 720)
+	self.add_child(house)
 	var pipe = PIPE_CLASS.instance()
 	pipe.position = Vector2(1200, y)
 	self.add_child(pipe)
